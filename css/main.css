@@ -1,0 +1,842 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Reset styles: Lo que no trae normalize
+   ========================================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+*{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #ccc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #ccc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Carlos Rivadeneira's custom styles
+   ========================================================================== */
+/*
+Colores.-
+Azul Oscuro:  #166499 rgb(22,100,153)
+Azul Claro:   #1f84c7 rgb(31,132,199)
+Gris:         #e6e6e6 #f0f0f0 rgb(230-240)
+Porcentajes.-
+960px=93.75%     64px=6,66666666666666667%
+*/
+
+/*----------------Tipografias @fontface--------------------------*/
+@font-face {
+    font-family: 'PTSansBold';
+    src: url('../fonts/PTS75F-webfont.eot');
+    src: url('../fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTS75F-webfont.woff') format('woff'),
+         url('../fonts/PTS75F-webfont.ttf') format('truetype'),
+         url('../fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'PTSansRegular';
+    src: url('../fonts/PTS55F-webfont.eot');
+    src: url('../fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTS55F-webfont.woff') format('woff'),
+         url('../fonts/PTS55F-webfont.ttf') format('truetype'),
+         url('../fonts/PTS55F-webfont.svg#PTSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'DroidSerifRegular';
+    src: url('../fonts/DroidSerif-Regular-webfont.eot');
+    src: url('../fonts/DroidSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif-Regular-webfont.woff') format('woff'),
+         url('../fonts/DroidSerif-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/DroidSerif-Regular-webfont.svg#DroidSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DroidSerifBold';
+    src: url('../fonts/DroidSerif-Bold-webfont.eot');
+    src: url('../fonts/DroidSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif-Bold-webfont.woff') format('woff'),
+         url('../fonts/DroidSerif-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/DroidSerif-Bold-webfont.svg#DroidSerifBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*---------------------------Gral styles---------------------------*/
+body{
+    background: #e6e6e6;
+    padding: 0 auto;
+    width: 100%;
+}
+
+#header{
+    background: #fff;   /*Fondo de Header*/
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(230,230,230));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(230,230,230));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(230,230,230));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(230,230,230));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(230,230,230));
+    /*border-bottom: 9px solid #166499; /*Fondo de Border*/
+    /*background-image: -webkit-linear-gradient(top, rgb(22,100,153), rgb(31,132,199)) 1 100%;
+    background-image: -moz-linear-gradient(top, rgb(22,100,153), rgb(31,132,199)) 1 100%;
+    background-image: -o-linear-gradient(top, rgb(22,100,153), rgb(31,132,199)) 1 100%;
+    background-image: -ms-linear-gradient(top, rgb(22,100,153), rgb(31,132,199)) 1 100%;
+    background-image: linear-gradient(top, rgb(22,100,153), rgb(31,132,199)) 1 100%;
+    box-shadow: 0 2px rgb(0,36,103); */
+}
+
+nav[role="navigation"]{
+    height: 100%;
+}
+
+nav[role="navigation"] ul>li{
+    display: inline;
+    float:left;
+}
+
+nav[role="navigation"] a{
+    font: 1.4em/1.8em PTSansBold, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav[role="navigation"] a:link, nav[role="navigation"] a:visited{
+    color: #222;
+}
+
+.phone{
+    font-family: PTSansRegular, Arial, sans-serif;
+    font-weight: bold; 
+}
+
+.phone>span, #banner h1{
+    font-family: DroidSerifRegular, Georgia, serif;
+}
+
+#banner{
+    box-shadow: rgba(0,0,0,.3) 0px 3px 10px;
+    color: #444;
+    text-shadow: rgb(220,220,220) 1px 1px;
+}
+#banner strong{
+    color: #166499;
+    font-family: DroidSerifBold, Georgia, serif;
+}
+
+#banner h2{
+    font-family: PTSansRegular, Arial, sans-serif;
+    font-weight: normal;
+}
+
+#banner a{
+    font-weight: bold;
+}
+
+#banner a:link, #banner a:visited{
+    color: #166499;
+    font-style: italic;
+}
+
+#banner a:hover, #banner a:active{
+    color: #1f84c7;
+    font-style: italic;
+}
+
+#block article{
+    background: #fff;
+    background-image: -webkit-linear-gradient(top, rgb(240, 240, 240), rgb(255,255,255));
+    background-image: -moz-linear-gradient(top, rgb(240, 240, 240), rgb(255,255,255));
+    background-image: -o-linear-gradient(top, rgb(240, 240, 240), rgb(255,255,255));
+    background-image: -ms-linear-gradient(top, rgb(240, 240, 240), rgb(255,255,255));
+    background-image: linear-gradient(top, rgb(240, 240, 240), rgb(255,255,255));
+    border-top: #aaa solid 1px;
+}
+
+#block h2{
+    color: #1f84c7;
+    font: 1.2em/1.3em DroidSerifBold, Georgia, serif;
+    margin: .5em .8em;
+    text-shadow: #166499 1px 1px;
+}
+
+#block p{
+    font: 1em/1.2em PTSansRegular, Arial, sans-serif;
+    margin-left: 1.3em;
+}
+
+#block a{
+    font: 1em/1.2em PTSansBold, Arial, sans-serif;
+ 
+}
+
+#block a:after{
+        content:'>>';
+    }
+
+hr{
+    border-size:2px;
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+}
+
+blockquote:before, blockquote:after{
+    content: '"';
+    font-size: 2em;
+    line-height: 1em;
+}
+
+blockquote:after{
+    float: right;
+    padding-top: -.8em;
+}
+
+#testimonio{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: #aaa 1px 1px;
+    font-family: DroidSerifRegular, Georgia, serif;
+    padding: .5em 1em;
+    margin: .7em;
+}
+
+#testimonio cite{
+    float: right;
+    font-size: .9em;
+    font-style: normal; 
+    margin-top: .4em;
+}
+
+#testimonio span{
+    color: #1f84c7;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#clientes{
+    color: #555;
+    font-weight: bold;
+}
+
+#clientes p{
+    font-family: PTSansRegular, Arial, sans-serif;
+    margin-top: 1em;
+}
+
+#clientes figure{
+    background: #fff;
+}
+
+#pie{
+    background: #014776;
+    background-image: -webkit-linear-gradient(top, rgb(4,134,217), rgb(1, 71, 118));
+    background-image: -moz-linear-gradient(top, rgb(4,134,217), rgb(1, 71, 118));
+    background-image: -o-linear-gradient(top, rgb(4,134,217), rgb(1, 71, 118));
+    background-image: -ms-linear-gradient(top, rgb(4,134,217), rgb(1, 71, 118));
+    background-image: linear-gradient(top, rgb(4,134,217), rgb(1, 71, 118));
+    color:#fff;
+    font: 1.1em/1.1em PTSansBold, Arial, sans-serif;
+    padding: .4em;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media all and (min-width: 274px) {
+    #header>*{
+        display: block;
+        height:auto;
+    }
+
+    .logo img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 15px 0;
+    }
+    
+    nav[role=navigation]{
+        float: left;
+        width: 100%;
+    }
+    nav[role="navigation"] ul{
+        width: 100%;
+    }
+    nav[role="navigation"] ul>li{
+        background:#1f84c7;
+        border: #166499 solid 1px;
+        width: 50%;
+    }
+    nav[role="navigation"] ul>li:first-child{
+        display:none;
+    }
+
+    nav[role="navigation"] a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav[role="navigation"] a:link, nav[role="navigation"] a:visited{
+    color: #fff;
+    }
+
+    .phone{
+        font-size: 1.4em;
+        line-height:1.5em;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .phone>span{
+        color: #1f84c7;
+        display: block;
+        font-size: 2em;
+        line-height: 1.2em;
+        text-align: center;
+        text-shadow: #166499 2px 1px;
+    }
+
+    #banner{
+        background: url(../img/bannerBG_s.jpg) top center no-repeat;
+        width: 100%;
+    }
+
+    #banner img{
+        display: none;
+    }
+
+    #banner h1{
+        background: rgba(255,255,255,.5);
+        font-size: 1.7em;
+        line-height: 1.3em;
+        padding:.2em .5em; 
+    }
+
+    #banner h2{
+        background: rgba(240,240,240,1);
+        font-size: 1.4em;
+        line-height: 1.1em;
+        padding:.8em .8em;
+        margin-bottom: .5em;
+    }
+
+    #block{
+        border-bottom: #aaa solid 1px;
+    }
+
+    #block img,#block a{
+        float: right;
+    }
+
+
+    #block img{
+        border: rgb(31,132,199) solid 2px;
+        box-shadow: #166499 2px 2px 2px;
+        margin: .7em;
+        width:40.625%;
+        max-width: 130px;
+    }
+
+    #block article p:last-child{
+        float: right;    
+        width: 80%;
+        display: block;
+        margin-right: 0px;
+    }
+
+    #block a{
+        background: #014776;
+        background-image: -webkit-linear-gradient(top, rgb(4,134,217) ,rgb(1, 71, 118));
+        background-image: -moz-linear-gradient(top, rgb(4,134,217) ,rgb(1, 71, 118));
+        background-image: -o-linear-gradient(top, rgb(4,134,217) ,rgb(1, 71, 118));
+        background-image: -ms-linear-gradient(top, rgb(4,134,217) ,rgb(1, 71, 118));
+        background-image: linear-gradient(top, rgb(4,134,217) ,rgb(1, 71, 118));
+        border-radius: 10px;
+        box-shadow: #166499 2px 2px 2px;
+        color: #fff;
+        margin: .5em;
+        padding: .5em .3em .3em;
+        text-align: center;
+        width:150px;
+    }
+
+    #testimonio{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    #clientes{
+        display: inline;
+        text-align:center;
+    }
+
+    #clientes figure{
+        border: #ccc solid 1px;
+        margin: 0 auto;
+        padding: .5em;
+    }
+
+    #clientes img:nth-child(n+3){
+        display: none;
+    }
+
+    #pie{
+        text-align: center;
+    }
+
+    #pie nav{
+        display: none;
+    }    
+}
+
+@media all and (min-width: 480px){  
+    nav[role="navigation"] ul>li{
+        font-size: .8em;    
+        width: 25%;
+    }
+
+    .phone{
+        text-align: center;
+    }
+
+    #banner {
+        background: url(../img/bannerBG_m.jpg) top center no-repeat;
+        float: left;
+        margin-bottom: 1em;
+    }
+
+    #banner header{
+        float: left;
+        position: relative;
+    }
+
+    #banner hgroup{
+        width: 60%;
+        float: left;
+    }
+
+    #banner h2{
+        margin-bottom: 0;
+    }
+
+    #banner header img{
+        display: block;
+        float: right;
+        width: 38%;
+        min-width: 205px;
+        max-width: 220px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    #block{
+        float: left;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    #block article{
+        display: table-cell;
+        width: 33.3333%;
+        position: relative;
+    }
+    
+    #block .imgc{
+        width: 130px;
+        overflow: auto;
+        margin: 0 auto;
+    }
+
+    #block img{
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        min-width: 130px;
+    }
+
+    #block header{
+        text-align: center;
+        clear: both;
+    }
+
+    #block article p{
+        margin-left: 0;
+        margin-bottom: 3em;
+        padding: 0 1em;
+    }
+
+    #block article>p:last-child{
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: .2em; 
+    } 
+
+    #block a{
+        font-size: .9em;
+        max-width: 90%;
+    }
+}
+@media all and (min-width: 768px) {
+    #banner{
+        display: block;
+        margin: 0 5%;
+        width:90%;
+
+    }
+
+    #header img{
+        float:left;
+        margin-left: 10%;
+    }
+    #block{
+        padding:0 5%; 
+    }
+    .phone{
+        padding-top: .5em;
+    }
+
+    .phone,.phone span{
+        text-align:right;
+    }
+
+    nav[role="navigation"]{
+        display: block;
+        width: 75%;
+        margin-left: 5%
+    }
+
+    nav[role="navigation"] ul>li,nav[role="navigation"] a{
+        background: none;
+        border:0 transparent;
+    }
+
+    nav[role="navigation"] ul{
+        height: auto;
+        margin: 0 auto;
+    }
+
+    nav[role="navigation"] ul>li{
+        width: 20%;
+        border-left: 2px solid #666;
+    }
+
+    nav[role="navigation"] ul li:nth-child(n+1){
+        border: 0;
+    }
+
+    nav[role="navigation"] a:link, nav[role="navigation"] a:visited{
+    color: #222;
+    background-image: -webkit-linear-gradient(top, rgb(98, 98, 98), rgb(34,34,34));
+    background-image: -moz-linear-gradient(top, rgb(98, 98, 98), rgb(34,34,34));
+    background-image: -o-linear-gradient(top, rgb(98, 98, 98), rgb(34,34,34));
+    background-image: -ms-linear-gradient(top, rgb(98, 98, 98), rgb(34,34,34));
+    background-image: linear-gradient(top, rgb(98, 98, 98), rgb(34,34,34));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+}
+
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
